@@ -1,4 +1,4 @@
-from ldap3 import Server, Connection, ALL_ATTRIBUTES, ALL, SUBTREE, MODIFY_REPLACE, Tls
+from ldap3 import Server, Connection, ALL_ATTRIBUTES, ALL, SUBTREE, MODIFY_REPLACE, Tls, ALL_OPERATIONAL_ATTRIBUTES
 from ldap3.extend.microsoft.addMembersToGroups import ad_add_members_to_groups as addUsersInGroups
 from ldap3.extend.microsoft.removeMembersFromGroups import ad_remove_members_from_groups as removeUsersFromGroups
 import json
@@ -73,8 +73,9 @@ class ActiveDirectoryMgmt:
             searchParameters = {
                 'search_base': self.ad_base_dn,
                 'search_filter': filters,
-                'attributes': self.ad_attributes_list,
-                # 'attributes': ALL_ATTRIBUTES,
+                # 'attributes': self.ad_attributes_list,
+                'attributes': ALL_ATTRIBUTES,
+                # 'attributes': ALL_OPERATIONAL_ATTRIBUTES,
                 'paged_size': 5,
                 'paged_cookie': 5,
                 'search_scope': SUBTREE
