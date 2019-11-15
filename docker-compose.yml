@@ -1,0 +1,15 @@
+version: '3'
+services:
+        webservices:
+                build: .
+                ports:
+                        - "8088:5000"
+                environment:
+                        - DOMAIN_NAME="domain.local"
+                        - BASE_DN="dc=nida,dc=local"
+                        - BIND_USER="binduser"
+                        - BIND_PASSWORD="password"
+                        - AD_SERVER="10.100.100.171"
+                        - TOKEN_KEY="token_key"
+                volumes:
+                        - .:/code

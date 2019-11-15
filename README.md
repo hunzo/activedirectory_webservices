@@ -1,20 +1,33 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
-
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
-
+Active Directory Management Web Services
 # Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+Build Docker Images and Run Container with Parameter
+## Build docker images
+	- docker build -t img/images_name .
+## Run container with parameter
+```
+docker run -d \
+        --name active_directory_webservices \
+        -p 8088:5000 \
+        -e DOMAIN_NAME="domain.local" \
+        -e BASE_DN="dc=domain,dc=local" \
+        -e BIND_USER="binduser" \
+        -e BIND_PASSWORD="bind_user_password" \
+        -e AD_SERVER="192.168.1.10" \
+        -e TOKEN_KEY="token_key" \
+	img/images_name
+```
+## Environment Variable
+```
+DOMAIN_NAME : active directory domain name
+BASE_DN : base dn for search account 
+BIND_USER : bind username with privilege 'Account Operation'
+BIND_PASSWORD : bind user password
+AD_SERVER : active directory ip address
+TOKEN_KEY : Token Keys
+```
+## Run Container with docker-compose
+Edit docker-compose.yml set Environment Variable
+```
+docker-compose up -d --build
+```
