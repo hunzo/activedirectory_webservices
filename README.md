@@ -21,8 +21,8 @@ docker run -d \
 ```
 DOMAIN_NAME : active directory domain name
 BASE_DN : base dn for search account 
-BIND_USER : bind username with privilege 'Account Operation'
-BIND_PASSWORD : bind user password
+BIND_USER : binding username with privilege 'Account Operation'
+BIND_PASSWORD : binding user password
 AD_SERVER : active directory ip address
 TOKEN_KEY : Token Keys
 ```
@@ -30,4 +30,8 @@ TOKEN_KEY : Token Keys
 Edit docker-compose.yml set Environment Variable
 ```
 docker-compose up -d --build
+```
+## Application Runing
+```
+http://localhost:8088/api
 ```
