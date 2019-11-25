@@ -15,6 +15,7 @@ docker run -d \
         -e BIND_PASSWORD="bind_user_password" \
         -e AD_SERVER="192.168.1.10" \
         -e TOKEN_KEY="token_key" \
+	-e TZ=Asia/Bangkok \
 	img/images_name
 ```
 ## Environment Variable
