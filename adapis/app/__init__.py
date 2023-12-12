@@ -1,15 +1,15 @@
 from flask import Blueprint
-from flask_restplus import Api
+from flask_restx import Api
 from adapis.app.nsadapis import adservice_api
 from adapis.models.apiModel import UsersModels
 import os
 
-bp = Blueprint('bp', __name__)
+blueprint = Blueprint('blueprint', __name__)
 
-api = Api(bp, title='Active Directory Web Services',
+api = Api(blueprint, title='Active Directory Web Services',
         version='0.2', 
         description=
-        'APIs ' + os.environ.get('DOMAIN_NAME') + '\nauthor : Surapong Naowasate \ndate : 2019-10-25 \nversion : 0.2')
+        'APIs ' + os.environ.get('DOMAIN_NAME', 'domain.local') + '\nauthor : Surapong Naowasate \ndate : 2019-10-25 \nversion : 0.2')
 
 api.models[UsersModels.CheckAuthModel.name] = UsersModels.CheckAuthModel
 api.models[UsersModels.UserinfoModel.name] = UsersModels.UserinfoModel

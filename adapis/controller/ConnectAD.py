@@ -42,8 +42,8 @@ class ADOperation:
 
     def get_bind_data(self):
         userInfo = {
-                'info': '123'
-                }
+            'info': '123'
+        }
         return userInfo
 
     def check_auth(self, username, password):
@@ -68,10 +68,10 @@ class ADOperation:
                 data.append(temp)
             except Exception as e:
                 ret = {
-                        'result': 'No user Exists !!!',
-                        'description': 'UserDoesNotExist',
-                        'error': str(e)
-                        }
+                    'result': 'No user Exists !!!',
+                    'description': 'UserDoesNotExist',
+                    'error': str(e)
+                }
                 return ret
         pprint(data)
         return data
@@ -86,9 +86,9 @@ class ADOperation:
 
         if len(rs) == 0:
             ret = {
-                    'result': 'No user Exists !!!',
-                    'description': 'UserDoesNotExist',
-                    }
+                'result': 'No user Exists !!!',
+                'description': 'UserDoesNotExist',
+            }
             return ret
 
         data = []
@@ -108,9 +108,9 @@ class ADOperation:
 
         if len(rs) == 0:
             ret = {
-                    'result': 'No user Exists !!!',
-                    'description': 'UserDoesNotExist',
-                    }
+                'result': 'No user Exists !!!',
+                'description': 'UserDoesNotExist',
+            }
             return ret
 
         data = []
@@ -130,9 +130,9 @@ class ADOperation:
 
         if len(rs) == 0:
             ret = {
-                    'result': 'No user Exists !!!',
-                    'description': 'UserDoesNotExist',
-                    }
+                'result': 'No user Exists !!!',
+                'description': 'UserDoesNotExist',
+            }
             return ret
 
         data = []

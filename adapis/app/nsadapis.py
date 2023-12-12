@@ -1,4 +1,4 @@
-from flask_restplus import Namespace, Resource, fields
+from flask_restx import Namespace, Resource, fields
 from flask import request, jsonify
 from adapis.models.apiModel import UsersModels as model
 from adapis.controller.ConnectAD import ADOperation
@@ -6,8 +6,9 @@ from adapis.lib.TokenAuth import token_required, authorizations
 import os
 
 adservice_api = Namespace(
-    'APIs for ActiveDirectory Services', 
-    description='Active Directory Domain ' + os.environ.get('DOMAIN_NAME'), 
+    'APIs for ActiveDirectory Services',
+    description='Active Directory Domain ' +
+    os.environ.get('DOMAIN_NAME', 'domain.local'),
     authorizations=authorizations)
 
 Con = ADOperation()

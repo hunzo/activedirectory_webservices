@@ -1,4 +1,4 @@
-from flask_restplus import fields, Model
+from flask_restx import fields, Model
 
 
 class UsersModels:

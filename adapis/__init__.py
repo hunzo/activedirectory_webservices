@@ -6,8 +6,8 @@ def create_app():
 #     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databases/mydb.sqlite3'
 #     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    from adapis.app import bp
-    app.register_blueprint(bp, url_prefix='/api')
+    from adapis.app import blueprint
+    app.register_blueprint(blueprint, url_prefix='/api')
 
     # from adapis.app import api
     # api.init_app(app)

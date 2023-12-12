@@ -176,7 +176,6 @@ class ActiveDirectoryMgmt:
 
         return user_data
 
-
     def search_group_name(self, SEARCH_GROUP):
         filters = '(&(objectclass=group)(cn=' + SEARCH_GROUP + '))'
 
